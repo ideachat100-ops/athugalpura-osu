@@ -1,0 +1,88 @@
+{
+  "brand": {
+    "name": "Athugalpura Osu",
+    "tagline": "Royal Majesty & Divine Traditional Healing",
+    "subtitle": "Sacred Vajrayudha Relics & Consecrated Royal Ayurvedic Formulations",
+    "established": "Rooted in the 13th-century Royal Dynasty of the Athugala Kingdom"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contacts",
+    "cart": "Sacred Chest",
+    "concierge": "Royal Concierge",
+    "certificate": "Certificate Verification"
+  },
+  "hero": {
+    "titlePrefix": "Granting Prosperity & Spiritual Power",
+    "titleHighlight": "The Sacred Vajrayudha",
+    "titleSuffix": "& Consecrated Royal Remedies of Athugalpura",
+    "subtitle": "Passed down through royal physicians of the Kandyan & Athugalpura dynasties. Consecrated talismans and holistic remedies charged with sacred ritual sciences.",
+    "ctaExplore": "Explore Sacred Catalog",
+    "ctaConsecrate": "Talisman Consecration",
+    "badgeAuthentic": "Royal Kandyan Heritage Seal",
+    "consecratedBadge": "100% Consecrated Relics"
+  },
+  "lineage": {
+    "heading": "The Royal Lineage of Athugalpura",
+    "subheading": "Sacred Esoteric Science Born at the Base of the Elephant Rock Fortress",
+    "p1": "Originating in the 13th century during the reign of King Parakramabahu IV in the Citadel of Athugalpura (Kurunegala), our sanctuary preserves the closely guarded herbal formulas and yantra consecrations of the royal court.",
+    "p2": "The double-ended antique brass Vajrayudha—adorned with dual makara mythical guards and the central cosmic bindu—serves as an invincible energetic nexus designed to dispel negative planetary transits, evil eyes, and psychic discord while attracting supreme triumph.",
+    "quote": "“To restore spiritual tranquility and banish suffering through the living herbal and ritual wisdom of ancient Sri Lanka.”",
+    "physicianTitle": "Council of Chief Ayurvedic Physicians & Temple Tantrik Masters"
+  },
+  "relics": {
+    "heading": "Featured Consecrated Relics & Remedies",
+    "subheading": "Energized during rare planetary conjunctions and stamped with royal seals",
+    "viewDetails": "View Sacred Details",
+    "addToCart": "Add to Sacred Chest",
+    "quickView": "Quick View",
+    "reserveItem": "Reserve Artifact",
+    "verifiedOriginal": "Verified Original Artifact"
+  },
+  "servicesSection": {
+    "heading": "Consecration & Spiritual Wellness Services",
+    "subheading": "Customized based on personal natal charts (Horoscope) and auspicious timing",
+    "bookNow": "Book Auspicious Time",
+    "viewAllServices": "Explore All Services"
+  },
+  "reviewsSection": {
+    "heading": "Patron Testimonials & Devotee Chronicles",
+    "subheading": "Recorded in the revered tradition of ancient palm-leaf chronicles",
+    "verifiedDevotee": "Verified Devotee",
+    "certificateNo": "Consecration Cert No"
+  },
+  "aboutPage": {
+    "badge": "Royal Dynasty & Lineage",
+    "title": "The Sacred Heritage of Athugalpura Veda Madura",
+    "subtitle": "Preserving 13th-century esoteric medicine and ritual tantrik sciences unbroken across centuries",
+    "storyHeading": "The Athugala Citadel & Secret Royal Formulations",
+    "storyP1": "During the illustrious reign of King Parakramabahu IV in the Citadel of Athugalpura (Kurunegala), court physicians formulated sacred herbal compounds and protective yantra shields for the protection of royalty and the realm. These secret palm-leaf manuscripts were passed down in strict oral and hereditary disciple lineages.",
+    "storyP2": "Today, under the sanctified mantle of Athugalpura Osu Veda Madura, we open this royal treasury to patrons and devotees worldwide. Every herbal elixir, antique brass Vajrayudha, and protective talisman is forged and consecrated in accordance with auspicious planetary hours and traditional guru lineages.",
+    "pillarsTitle": "Our Sacred Pillars of Sanctity",
+    "pillar1Title": "Uncompromised Purity",
+    "pillar1Desc": "Zero artificial compounds. Exclusively utilizing 108 wild-foraged sacred herbs sourced responsibly across pristine Sri Lankan sanctuaries.",
+    "pillar2Title": "Planetary Consecration",
+    "pillar2Desc": "Every talisman is energized through 108 continuous mantra recitations during rare celestial alignments such as Amrita Siddhi Yoga and Poya Full Moons.",
+    "pillar3Title": "Archival Verification",
+    "pillar3Desc": "Each relic is stamped with the Royal Kandyan Tusker seal and registered in our immutable archival ledger with a serialized tamper-proof certificate.",
+    "founderTitle": "Council of Hereditary Physicians",
+    "founderRole": "Senior Ayurvedic Doctors & Temple Tantrik Masters",
+    "founderDesc": "Led by hereditary masters with over 40 years of dedication to Nadi pulse diagnostics, sacred metallurgy, and consecrated esoteric sciences."
+  },
+  "footer": {
+    "about": "Athugalpura Osu is a sacred institution dedicated to safeguarding Sri Lanka's ancestral royal medicine and the protective authority of the consecrated Vajrayudha for devotees worldwide.",
+    "links": "Sacred Links",
+    "contact": "Sanctuary Details",
+    "address": "Sri Athugalpura Royal Veda Madura, Wellawa Road, Kurunegala, Sri Lanka.",
+    "phone": "+94 (37) 222 4589 / +94 (77) 123 4567",
+    "email": "divine@athugalpura-osu.lk",
+    "hours": "Daily 6:30 AM – 7:00 PM (Aligned with Auspicious Planetary Hours)",
+    "newsletterTitle": "Auspicious Calendar & Ritual Alerts",
+    "newsletterDesc": "Subscribe to receive alerts for upcoming Poya full moon energizing cycles and royal elixir releases.",
+    "subscribe": "Subscribe to Sanctuary",
+    "copyright": "© 2026 Athugalpura Osu. All Rights Reserved. Sri Lanka Indigenous Medicine Council Reg: AP/MED/2026/894"
+  }
+}
