@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
   return generatePageMetadata({
     title: isSi ? "රාජකීය වෙද මැදුර සම්බන්ධතා" : "Sanctuary Sanctuary & Royal Concierge",
     description: isSi
-      ? "කුරුණෑගල ඇතුගල්පුර රාජකීය වෙද මැදුර වෙතට පැමිණීමට වේලාවක් වෙන්කරගන්න හෝ රහස්‍ය උපදේශනයක් යොමුකරන්න."
+      ? "කුරුණෑගල ඇතුගල්පුර රාජකීය වෙද මැදුර වෙතට පැමිණීමට වේලාවක් වෙන්කරගන්න."
       : "Contact our historical sanctuary located at the base of the Elephant Rock Fortress in Kurunegala, Sri Lanka. Direct WhatsApp concierge and confidential consultations.",
     lang,
     path: "/contact",
