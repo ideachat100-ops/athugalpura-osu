@@ -15,9 +15,9 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
   const isSi = lang === "si";
 
   return generatePageMetadata({
-    title: isSi ? "රාජකීය ආශ්‍රමය හා සම්බන්ධතා" : "Sanctuary Sanctuary & Royal Concierge",
+    title: isSi ? "රාජකීය වෙද මැදුර සම්බන්ධතා" : "Sanctuary Sanctuary & Royal Concierge",
     description: isSi
-      ? "කුරුණෑගල ඇතුගල්පුර රාජකීය ආශ්‍රමය වෙත පැමිණීමට වේලාවක් වෙන්කරගන්න හෝ රහස්‍ය උපදේශනයක් යොමුකරන්න."
+      ? "කුරුණෑගල ඇතුගල්පුර රාජකීය වෙද මැදුර වෙතට පැමිණීමට වේලාවක් වෙන්කරගන්න හෝ රහස්‍ය උපදේශනයක් යොමුකරන්න."
       : "Contact our historical sanctuary located at the base of the Elephant Rock Fortress in Kurunegala, Sri Lanka. Direct WhatsApp concierge and confidential consultations.",
     lang,
     path: "/contact",
@@ -31,7 +31,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
   return (
     <div className="w-full min-h-screen py-12 md:py-20 bg-[#0A0908] text-[#F5EEDB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Page Banner Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#D4AF37]/40 bg-[#24060B]">
@@ -42,19 +42,19 @@ export default async function ContactPage({ params }: ContactPageProps) {
           </div>
 
           <h1 className="font-ceremonial text-3xl sm:text-4xl md:text-5xl font-bold text-gold-gradient">
-            {isSi ? "කුරුණෑගල ඇතුගල්පුර ආශ්‍රම පරිශ්‍රය" : "The Kurunegala Sanctuary & Royal Concierge"}
+            {isSi ? "කුරුණෑගල ඇතුගල්පුර වෙද මැදුර" : "The Kurunegala Sanctuary & Royal Concierge"}
           </h1>
 
           <p className="text-xs sm:text-sm md:text-base text-[#C4B9A3] font-sinhala-body">
             {isSi
-              ? "ඓතිහාසික ඇතුගල පාමුල පිහිටි ශුද්ධ වූ ආශ්‍රම භූමියට පැමිණීමට සුබ හෝරාවක් වෙන්කරවා ගන්න. ලොව පුරා බැතිමතුන් සඳහා 24/7 ක්‍රියාත්මක රහස්‍ය සම්බන්ධතා සේවාව."
+              ? "ඓතිහාසික ඇතුගල පාමුල පිහිටි ශුද්ධ වූ වෙද මැදුර පැමිණීමට සුබ හෝරාවක් වෙන්කරවා ගන්න. ලොව පුරා බැතිමතුන් සඳහා 24/7 ක්‍රියාත්මක රහස්‍ය සම්බන්ධතා සේවාව."
               : "Nestled at the base of the Athugala Elephant Rock in Kurunegala, Sri Lanka. Reserve private sanctuary appointments or engage our global concierge."}
           </p>
         </div>
 
         {/* 2-Column Layout: Vector Sanctuary Map & Encrypted Inquiry Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
-          
+
           {/* Left Column: Interactive Stylized Vector Map with Brass Pins */}
           <div className="lg:col-span-5 space-y-8">
             <SanctuaryMap lang={lang} />
@@ -70,13 +70,9 @@ export default async function ContactPage({ params }: ContactPageProps) {
                   <span className="text-[#D4AF37] font-bold">🏛️</span>
                   <div>
                     <span className="font-semibold text-[#FFF0BE] block">
-                      {isSi ? "වෙද මැදුරේ කාර්යාලය:" : "Veda Madura Office:"}
+                      {isSi ? "රාජකීය ලේඛනාගාර කාර්යාලය:" : "Royal Hermitage Office:"}
                     </span>
-                    <span>
-                      {isSi
-                        ? "ශ්‍රී ඇතුගල්පුර වෙද මැදුර, වැල්ලව පාර, කුරුණෑගල, ශ්‍රී ලංකාව."
-                        : "Sri Athugalpura Veda Madura, Wellawa Road, Kurunegala, Sri Lanka."}
-                    </span>
+                    <span>ශ්‍රී ඇතුගල්පුර ආශ්‍රමය, විහාර පාර, කුරුණෑගල, ශ්‍රී ලංකාව.</span>
                   </div>
                 </div>
 
