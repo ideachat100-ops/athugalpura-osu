@@ -70,9 +70,13 @@ export default async function ContactPage({ params }: ContactPageProps) {
                   <span className="text-[#D4AF37] font-bold">🏛️</span>
                   <div>
                     <span className="font-semibold text-[#FFF0BE] block">
-                      {isSi ? "රාජකීය ලේඛනාගාර කාර්යාලය:" : "Royal Hermitage Office:"}
+                      {isSi ? "වෙද මැදුරේ ප්‍රධාන කාර්යාලය:" : "Royal Veda Madura Office:"}
                     </span>
-                    <span>ශ්‍රී ඇතුගල්පුර ආශ්‍රමය, විහාර පාර, කුරුණෑගල, ශ්‍රී ලංකාව.</span>
+                    <span>
+                      {isSi
+                        ? "ශ්‍රී ඇතුගල්පුර රාජකීය වෙද මැදුර, වැල්ලව පාර, කුරුණෑගල, ශ්‍රී ලංකාව."
+                        : "Sri Athugalpura Royal Veda Madura, Wellawa Road, Kurunegala, Sri Lanka."}
+                    </span>
                   </div>
                 </div>
 

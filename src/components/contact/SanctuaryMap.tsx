@@ -84,10 +84,10 @@ export function SanctuaryMap({ lang }: SanctuaryMapProps) {
           </div>
           <div className="mt-2 bg-[#2A050A] border-2 border-[#D4AF37] px-4 py-2 rounded-xl text-center backdrop-blur-md shadow-2xl whitespace-nowrap">
             <span className="text-xs font-extrabold text-[#FFF0BE] block">
-              {isSi ? "ඇතුගල්පුර ඔසු ප්‍රධාන ජීවම් ආශ්‍රමය" : "Athugalpura Osu Main Sanctum"}
+              {isSi ? "ඇතුගල්පුර ඔසු ප්‍රධාන රාජකීය වෙද මැදුර" : "Athugalpura Osu Royal Veda Madura"}
             </span>
             <span className="text-[10px] text-[#E5C158] font-mono">
-              {isSi ? "පූජනීය ඖෂධාගාරය හා ලේඛනාගාරය" : "Royal Laboratories & Archival Vaults"}
+              {isSi ? "පූජනීය ඖෂධාගාරය හා ජීවම් මැදුර" : "Royal Laboratories & Consecration Sanctum"}
             </span>
           </div>
         </div>
