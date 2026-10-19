@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Product } from "@/types/product";
 import { KathuruMalaIcon, SacredBlossomRating, VajrayudhaEmblem } from "../ui/KandyanIcons";
 import { GoldButton } from "../ui/GoldButton";
-import { useCart } from "../layout/CartDrawer";
+import { useOrder } from "@/context/OrderContext";
 
 interface QuickViewModalProps {
   product: Product | null;
@@ -14,24 +14,15 @@ interface QuickViewModalProps {
 }
 
 export function QuickViewModal({ product, onClose, lang }: QuickViewModalProps) {
-  const { addItem } = useCart();
+  const { openOrderModal } = useOrder();
 
   if (!product) return null;
 
   const isSi = lang === "si";
 
-  const handleAddToCart = () => {
-    addItem({
-      id: product.id,
-      slug: product.slug,
-      title: isSi ? product.titleSi : product.titleEn,
-      price: isSi ? product.priceLKR : product.priceUSD,
-      currency: isSi ? "LKR" : "USD",
-      image: product.image,
-      quantity: 1,
-      serialNumber: `${product.serialNumberPrefix}108`,
-    });
+  const handleBuyNow = () => {
     onClose();
+    openOrderModal(product);
   };
 
   return (
@@ -153,12 +144,12 @@ export function QuickViewModal({ product, onClose, lang }: QuickViewModalProps) 
             {/* Actions */}
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <GoldButton
-                onClick={handleAddToCart}
+                onClick={handleBuyNow}
                 variant="primary"
                 size="md"
                 className="w-full sm:w-auto flex-1"
               >
-                {isSi ? "පූජා පෙට්ටකමට එක්කරන්න" : "Add to Sacred Chest"}
+                {isSi ? "මිලදී ගන්න (Buy Now)" : "Buy Now"}
               </GoldButton>
               <GoldButton
                 onClick={onClose}

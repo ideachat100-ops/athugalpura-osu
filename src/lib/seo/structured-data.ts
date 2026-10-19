@@ -20,7 +20,7 @@ export function generateOrganizationSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+94-37-222-4589",
+      telephone: "+94-76-545-8879",
       contactType: "Customer Support & Spiritual Concierge",
       areaServed: ["LK", "US", "GB", "AU", "EU"],
       availableLanguage: ["si", "en"],

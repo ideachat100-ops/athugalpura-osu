@@ -6,7 +6,7 @@ import { Product } from "@/types/product";
 import { KathuruMalaIcon, SacredBlossomRating, RoyalLionBadge } from "../ui/KandyanIcons";
 import { GoldButton } from "../ui/GoldButton";
 import { QuickViewModal } from "./QuickViewModal";
-import { useCart } from "../layout/CartDrawer";
+import { useOrder } from "@/context/OrderContext";
 
 interface ProductCardProps {
   product: Product;
@@ -15,21 +15,12 @@ interface ProductCardProps {
 
 export function ProductCard({ product, lang }: ProductCardProps) {
   const [modalOpen, setModalOpen] = useState(false);
-  const { addItem } = useCart();
+  const { openOrderModal } = useOrder();
   const isSi = lang === "si";
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleBuyNow = (e: React.MouseEvent) => {
     e.stopPropagation();
-    addItem({
-      id: product.id,
-      slug: product.slug,
-      title: isSi ? product.titleSi : product.titleEn,
-      price: isSi ? product.priceLKR : product.priceUSD,
-      currency: isSi ? "LKR" : "USD",
-      image: product.image,
-      quantity: 1,
-      serialNumber: `${product.serialNumberPrefix}108`,
-    });
+    openOrderModal(product);
   };
 
   return (
@@ -93,11 +84,12 @@ export function ProductCard({ product, lang }: ProductCardProps) {
             </div>
 
             <button
-              onClick={handleAddToCart}
-              className="px-3.5 py-2 rounded-full bg-[#4A0E17] hover:bg-[#6B1422] border border-[#D4AF37]/60 hover:border-[#D4AF37] text-xs font-bold text-[#FFF0BE] flex items-center gap-1.5 shadow-[0_0_12px_rgba(74,14,23,0.5)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300"
+              onClick={handleBuyNow}
+              className="px-4 py-2 rounded-full bg-gradient-to-r from-[#4A0E17] via-[#6B1422] to-[#4A0E17] hover:from-[#6B1422] hover:to-[#8E1A2D] border border-[#D4AF37] text-xs font-bold text-[#FFF0BE] flex items-center gap-1.5 shadow-[0_0_15px_rgba(212,175,55,0.35)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] hover:scale-105 transition-all duration-300"
+              title={isSi ? "වහාම මිලදී ගන්න" : "Buy Now"}
             >
               <KathuruMalaIcon className="w-3.5 h-3.5 text-[#D4AF37]" />
-              <span>{isSi ? "පෙට්ටකමට" : "Add"}</span>
+              <span>{isSi ? "මිලදී ගන්න" : "Buy Now"}</span>
             </button>
           </div>
         </div>

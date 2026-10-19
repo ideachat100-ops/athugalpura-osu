@@ -84,9 +84,22 @@ export default async function ContactPage({ params }: ContactPageProps) {
                   <span className="text-[#D4AF37] font-bold">📞</span>
                   <div>
                     <span className="font-semibold text-[#FFF0BE] block">
-                      {isSi ? "ක්ෂණික දුරකථන අංක:" : "Official Phone Lines:"}
+                      {isSi ? "ක්ෂණික දුරකථන හා WhatsApp අංකය:" : "Official Phone & WhatsApp Line:"}
                     </span>
-                    <span className="font-mono text-[#D4AF37]">+94 (37) 222 4589 / +94 (77) 123 4567</span>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      <a href="tel:+94765458879" className="font-mono text-[#D4AF37] hover:underline">
+                        +94 76 545 8879
+                      </a>
+                      <span className="text-[#8A7C6A]">|</span>
+                      <a
+                        href="https://wa.me/94765458879?text=Athugalpura%20Osu%20Inquiry"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-[#25D366] font-bold hover:underline"
+                      >
+                        076 545 8879
+                      </a>
+                    </div>
                   </div>
                 </div>
 

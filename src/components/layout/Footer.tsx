@@ -123,7 +123,23 @@ export function Footer({ lang }: FooterProps) {
                 <span className="block text-[#D4AF37] font-semibold text-xs">
                   {isSi ? "ක්ෂණික ඇමතුම් හා WhatsApp:" : "Concierge Hotline & WhatsApp:"}
                 </span>
-                <p className="text-[#FFF0BE] font-mono mt-0.5">+94 (37) 222 4589 / +94 (77) 123 4567</p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 mt-0.5">
+                  <a
+                    href="tel:+94765458879"
+                    className="text-[#FFF0BE] font-mono hover:text-[#D4AF37] transition-colors"
+                  >
+                    +94 76 545 8879
+                  </a>
+                  <span className="text-[#8A7C6A] hidden sm:inline">|</span>
+                  <a
+                    href="https://wa.me/94765458879?text=Athugalpura%20Osu%20Inquiry"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#25D366] font-mono font-bold hover:underline"
+                  >
+                    💬 076 545 8879
+                  </a>
+                </div>
               </div>
               <div>
                 <span className="block text-[#D4AF37] font-semibold text-xs">

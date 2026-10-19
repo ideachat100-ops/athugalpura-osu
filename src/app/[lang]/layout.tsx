@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { CartProvider } from "@/components/layout/CartDrawer";
+import { OrderProvider } from "@/context/OrderContext";
 import { generateOrganizationSchema } from "@/lib/seo/structured-data";
 
 export async function generateStaticParams() {
@@ -18,7 +18,7 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
   const organizationSchema = generateOrganizationSchema();
 
   return (
-    <CartProvider>
+    <OrderProvider lang={lang}>
       <div className="min-h-screen flex flex-col bg-[#0A0908] text-[#F5EEDB]">
         {/* Schema.org Structured Data */}
         <script
@@ -35,6 +35,6 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
         {/* Imperial Kandyan Footer */}
         <Footer lang={lang} />
       </div>
-    </CartProvider>
+    </OrderProvider>
   );
 }

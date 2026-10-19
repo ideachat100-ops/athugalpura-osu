@@ -9,6 +9,7 @@ import { generateProductSchema } from "@/lib/seo/structured-data";
 import { KathuruMalaIcon, KandyanLotusIcon, SacredBlossomRating, RoyalLionBadge } from "@/components/ui/KandyanIcons";
 import { GoldButton } from "@/components/ui/GoldButton";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { ProductBuyActions } from "@/components/products/ProductBuyActions";
 
 export async function generateStaticParams() {
   const languages = ["si", "en"];
@@ -203,25 +204,8 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               </ul>
             </div>
 
-            {/* Action Buttons */}
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <GoldButton
-                href={`/${lang}/services#book`}
-                variant="primary"
-                size="lg"
-                className="flex-1"
-              >
-                {isSi ? "නැකතින් වෙන්කරවා ගැනීම" : "Reserve with Consecration Muhurtha"}
-              </GoldButton>
-
-              <GoldButton
-                href={`/${lang}/contact`}
-                variant="secondary"
-                size="lg"
-              >
-                {isSi ? "රාජකීය උපදේශක අමතන්න" : "Consult Herbalist"}
-              </GoldButton>
-            </div>
+            {/* Action Buttons: Direct Buy & Muhurtha Reservation */}
+            <ProductBuyActions product={product} lang={lang} />
 
           </div>
 

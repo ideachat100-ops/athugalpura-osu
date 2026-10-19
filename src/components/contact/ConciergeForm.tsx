@@ -189,12 +189,12 @@ export function ConciergeForm({ lang }: ConciergeFormProps) {
             <span className="text-xs font-bold text-[#FFF0BE] block">
               {isSi ? "ක්ෂණික WhatsApp සම්බන්ධතාවය:" : "Direct WhatsApp Sanctuary Line:"}
             </span>
-            <span className="text-xs text-[#D4AF37] font-mono font-bold">+94 77 123 4567</span>
+            <span className="text-xs text-[#D4AF37] font-mono font-bold">+94 76 545 8879 (076 545 8879)</span>
           </div>
         </div>
 
         <a
-          href="https://wa.me/94771234567?text=Athugalpura%20Osu%20Inquiry"
+          href="https://wa.me/94765458879?text=Athugalpura%20Osu%20Inquiry"
           target="_blank"
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-black font-bold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center gap-2"

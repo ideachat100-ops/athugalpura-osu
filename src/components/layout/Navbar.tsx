@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { useCart } from "./CartDrawer";
 import { KathuruMalaIcon, VajrayudhaEmblem } from "../ui/KandyanIcons";
 import { GoldButton } from "../ui/GoldButton";
 
@@ -15,7 +14,6 @@ interface NavbarProps {
 
 export function Navbar({ lang }: NavbarProps) {
   const pathname = usePathname();
-  const { openCart, items } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isSi = lang === "si";
@@ -27,8 +25,6 @@ export function Navbar({ lang }: NavbarProps) {
     { href: `/${lang}/about`, label: isSi ? "අප ගැන" : "About" },
     { href: `/${lang}/contact`, label: isSi ? "සම්බන්ධතා" : "Contacts" },
   ];
-
-  const totalItemsCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <header className="sticky top-0 z-40 w-full">
@@ -95,20 +91,18 @@ export function Navbar({ lang }: NavbarProps) {
             {/* Zero-shift Language Switcher */}
             <LanguageSwitcher currentLang={lang} />
 
-            {/* Sacred Cart Trigger with Kandyan Flower */}
-            <button
-              onClick={openCart}
-              className="relative p-2.5 rounded-full border border-[#D4AF37]/40 bg-[#1A060A]/80 hover:bg-[#4A0E17] text-[#FFF0BE] transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] group"
-              title={isSi ? "පූජා පෙට්ටකම" : "Sacred Chest"}
-              aria-label="Open sacred chest"
+            {/* Direct Official WhatsApp Hotline: 0765458879 */}
+            <a
+              href="https://wa.me/94765458879?text=Athugalpura%20Osu%20Inquiry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border border-[#25D366]/60 bg-[#1A060A]/90 hover:bg-[#25D366] text-[#25D366] hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(37,211,102,0.25)] hover:shadow-[0_0_20px_rgba(37,211,102,0.6)] flex items-center gap-1.5 text-xs font-bold font-mono group"
+              title={isSi ? "නිල WhatsApp සම්බන්ධතාවය: 076 545 8879" : "Official WhatsApp: 076 545 8879"}
+              aria-label="Direct WhatsApp Hotline"
             >
-              <KathuruMalaIcon className="w-5 h-5 text-[#D4AF37] group-hover:rotate-45 transition-transform duration-300" />
-              {totalItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#D4AF37] text-[#240509] font-bold text-[11px] rounded-full flex items-center justify-center border border-[#FFF0BE] shadow-md">
-                  {totalItemsCount}
-                </span>
-              )}
-            </button>
+              <span className="text-sm group-hover:scale-110 transition-transform">💬</span>
+              <span className="hidden md:inline font-bold">076 545 8879</span>
+            </a>
 
             {/* Concierge CTA */}
             <div className="hidden sm:block">
@@ -161,7 +155,15 @@ export function Navbar({ lang }: NavbarProps) {
               </Link>
             ))}
           </div>
-          <div className="pt-2 flex justify-center">
+          <div className="pt-2 flex flex-col gap-2.5">
+            <a
+              href="https://wa.me/94765458879?text=Athugalpura%20Osu%20Inquiry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-2.5 px-4 rounded-xl bg-[#25D366] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
+            >
+              <span>💬 WhatsApp: 076 545 8879</span>
+            </a>
             <GoldButton
               href={`/${lang}/contact`}
               variant="primary"
