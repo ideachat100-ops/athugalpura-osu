@@ -148,3 +148,74 @@
   font-family: 'Noto Serif Sinhala', 'Abhaya Libre', sans-serif;
   line-height: 1.8;
 }
+
+/* Kandyan Traditional Loader Animations */
+@keyframes kandyanSpinClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes kandyanSpinCounter {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes kandyanPulseAura {
+  0%, 100% {
+    transform: scale(0.96);
+    opacity: 0.55;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.85));
+  }
+}
+
+@keyframes kandyanFlameFlicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.85;
+  }
+  25% {
+    transform: scale(1.08, 0.94) translateY(-1px);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95, 1.05) translateY(-2px);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.03, 0.98) translateY(-0.5px);
+    opacity: 0.95;
+  }
+}
+
+.animate-kandyan-clockwise {
+  animation: kandyanSpinClockwise 18s linear infinite;
+  transform-origin: center;
+}
+
+.animate-kandyan-counter {
+  animation: kandyanSpinCounter 12s linear infinite;
+  transform-origin: center;
+}
+
+.animate-kandyan-aura {
+  animation: kandyanPulseAura 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-kandyan-flame {
+  animation: kandyanFlameFlicker 1.8s ease-in-out infinite;
+  transform-origin: center;
+}

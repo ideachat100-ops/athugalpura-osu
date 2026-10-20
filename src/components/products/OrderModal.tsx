@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Product } from "@/types/product";
 import { KathuruMalaIcon, KandyanLotusIcon, RoyalLionBadge } from "../ui/KandyanIcons";
 import { GoldButton } from "../ui/GoldButton";
+import { KandyanLoader } from "../ui/KandyanLoader";
 
 interface OrderModalProps {
   product: Product | null;
@@ -23,6 +24,7 @@ export function OrderModal({ product, isOpen, onClose, lang }: OrderModalProps) 
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [notes, setNotes] = useState("");
+  const [isTransmitting, setIsTransmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [lastWhatsAppUrl, setLastWhatsAppUrl] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -73,15 +75,21 @@ export function OrderModal({ product, isOpen, onClose, lang }: OrderModalProps) 
     const waText = encodeURIComponent(messageLines.join("\n"));
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
     setLastWhatsAppUrl(waUrl);
-    setIsSubmitted(true);
+    setIsTransmitting(true);
 
-    // Open WhatsApp in a new tab
-    if (typeof window !== "undefined") {
-      window.open(waUrl, "_blank", "noopener,noreferrer");
-    }
+    setTimeout(() => {
+      setIsTransmitting(false);
+      setIsSubmitted(true);
+
+      // Open WhatsApp in a new tab
+      if (typeof window !== "undefined") {
+        window.open(waUrl, "_blank", "noopener,noreferrer");
+      }
+    }, 1100);
   };
 
   const handleResetAndClose = () => {
+    setIsTransmitting(false);
     setIsSubmitted(false);
     setQuantity(1);
     setFullName("");
@@ -125,7 +133,17 @@ export function OrderModal({ product, isOpen, onClose, lang }: OrderModalProps) 
         </button>
 
         <div className="p-5 sm:p-8">
-          {isSubmitted ? (
+          {isTransmitting ? (
+            <div className="py-8 animate-in fade-in duration-300">
+              <KandyanLoader
+                size="sm"
+                lang={lang}
+                messageSi="ඇණවුම් තොරතුරු සුරක්ෂිතව WhatsApp වෙත යොමු කරමින් පවතී..."
+                messageEn="Securing and transmitting order details to WhatsApp..."
+                showBorder={false}
+              />
+            </div>
+          ) : isSubmitted ? (
             /* Order Success State */
             <div className="text-center py-8 space-y-6 animate-in fade-in duration-500">
               <div className="w-20 h-20 mx-auto rounded-full bg-[#24060B] border-2 border-[#D4AF37] flex items-center justify-center shadow-[0_0_35px_rgba(212,175,55,0.8)]">

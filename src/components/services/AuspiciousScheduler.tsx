@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { SERVICES } from "@/lib/data/services";
 import { KathuruMalaIcon, KandyanLotusIcon, RoyalLionBadge } from "../ui/KandyanIcons";
 import { GoldButton } from "../ui/GoldButton";
+import { KandyanLoader } from "../ui/KandyanLoader";
 
 interface AuspiciousSchedulerProps {
   lang: string;
@@ -117,7 +118,17 @@ export function AuspiciousScheduler({ lang, defaultServiceId }: AuspiciousSchedu
         </div>
       </div>
 
-      {isBooked ? (
+      {isSubmitting ? (
+        <div className="py-12 animate-in fade-in duration-300">
+          <KandyanLoader
+            size="md"
+            lang={lang}
+            messageSi="රාජකීය ජන්ම පත්‍රය හා සුබ නැකත් හෝරාව ගණනය වෙමින් පවතී..."
+            messageEn="Calculating auspicious natal conjunctions & royal muhurtha..."
+            showBorder={false}
+          />
+        </div>
+      ) : isBooked ? (
         <div className="py-16 text-center space-y-6 max-w-xl mx-auto animate-in zoom-in-95 duration-500">
           <div className="w-20 h-20 mx-auto rounded-full bg-[#32080E] border-2 border-[#D4AF37] flex items-center justify-center shadow-[0_0_35px_rgba(212,175,55,0.7)]">
             <KandyanLotusIcon className="w-12 h-12 text-[#D4AF37]" glow={true} />
