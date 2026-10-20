@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { KandyanLoader } from "../ui/KandyanLoader";
 
 interface KandyanPagePreloaderProps {
@@ -9,18 +8,22 @@ interface KandyanPagePreloaderProps {
 }
 
 export function KandyanPagePreloader({ lang }: KandyanPagePreloaderProps) {
-  const pathname = usePathname();
   const [loading, setLoading] = useState(true);
   const [fading, setFading] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  // Trigger 3-second ceremonial loading animation on initial load and route changes
+  // Runs ONLY ONCE on initial site entry, never on page switches
   useEffect(() => {
-    setLoading(true);
-    setFading(false);
-    setProgress(0);
+    // If already played in this browsing session, do not repeat
+    if (typeof window !== "undefined") {
+      const alreadyPlayed = sessionStorage.getItem("athugalpura_intro_played");
+      if (alreadyPlayed) {
+        setLoading(false);
+        return;
+      }
+    }
 
-    const DURATION_MS = 3000; // Exact 3 seconds as requested
+    const DURATION_MS = 3000; // 3 seconds ceremonial intro
     const INTERVAL_MS = 30;
     const increment = 100 / (DURATION_MS / INTERVAL_MS);
 
@@ -38,6 +41,9 @@ export function KandyanPagePreloader({ lang }: KandyanPagePreloaderProps) {
     // Fade out after 3 seconds
     const fadeTimer = setTimeout(() => {
       setFading(true);
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("athugalpura_intro_played", "true");
+      }
       const hideTimer = setTimeout(() => {
         setLoading(false);
       }, 700); // 700ms smooth fadeout
@@ -48,7 +54,7 @@ export function KandyanPagePreloader({ lang }: KandyanPagePreloaderProps) {
       clearInterval(progressTimer);
       clearTimeout(fadeTimer);
     };
-  }, [pathname]);
+  }, []); // Empty dependency array: NEVER re-runs on page navigation!
 
   if (!loading) return null;
 
