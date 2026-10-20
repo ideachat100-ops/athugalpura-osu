@@ -11,6 +11,8 @@ interface KandyanLoaderProps {
   size?: "sm" | "md" | "lg";
   lang?: string;
   showBorder?: boolean;
+  progress?: number;
+  showProgress?: boolean;
 }
 
 const DEFAULT_BLESSINGS_SI = [
@@ -34,6 +36,8 @@ export function KandyanLoader({
   size = "md",
   lang = "si",
   showBorder = true,
+  progress,
+  showProgress = false,
 }: KandyanLoaderProps) {
   const isSi = lang === "si";
   const [blessingIndex, setBlessingIndex] = useState(0);
@@ -209,6 +213,22 @@ export function KandyanLoader({
             />
           ))}
         </div>
+
+        {/* Optional Smooth Gold Progress Track */}
+        {showProgress && (
+          <div className="pt-3 max-w-[200px] sm:max-w-xs mx-auto space-y-1.5">
+            <div className="w-full h-1.5 rounded-full bg-[#200508] border border-[#D4AF37]/40 overflow-hidden relative shadow-inner">
+              <div
+                className="h-full bg-gradient-to-r from-[#D4AF37] via-[#FFF0BE] to-[#D4AF37] rounded-full transition-all duration-300 shadow-[0_0_8px_#D4AF37]"
+                style={{ width: `${Math.min(100, Math.max(0, progress || 0))}%` }}
+              />
+            </div>
+            <div className="flex justify-between items-center text-[10px] font-mono text-[#D4AF37] px-0.5">
+              <span>{isSi ? "චාරිත්‍රානුකූල පිවිසුම" : "Ceremonial Entry"}</span>
+              <span className="font-bold">{Math.round(progress || 0)}%</span>
+            </div>
+          </div>
+        )}
       </div>
 
     </div>

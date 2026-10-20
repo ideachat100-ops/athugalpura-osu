@@ -1,7 +1,7 @@
-import React from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { OrderProvider } from "@/context/OrderContext";
+import { KandyanPagePreloader } from "@/components/layout/KandyanPagePreloader";
 import { generateOrganizationSchema } from "@/lib/seo/structured-data";
 
 export async function generateStaticParams() {
@@ -19,6 +19,9 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
 
   return (
     <OrderProvider lang={lang}>
+      {/* 3-Second Ceremonial Kandyan Loading Entrance */}
+      <KandyanPagePreloader lang={lang} />
+
       <div className="min-h-screen flex flex-col bg-[#0A0908] text-[#F5EEDB]">
         {/* Schema.org Structured Data */}
         <script
