@@ -91,19 +91,6 @@ export function Navbar({ lang }: NavbarProps) {
             {/* Zero-shift Language Switcher */}
             <LanguageSwitcher currentLang={lang} />
 
-            {/* Direct Official WhatsApp Hotline: 0765458879 */}
-            <a
-              href="https://wa.me/94765458879?text=Athugalpura%20Osu%20Inquiry"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border border-[#25D366]/60 bg-[#1A060A]/90 hover:bg-[#25D366] text-[#25D366] hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(37,211,102,0.25)] hover:shadow-[0_0_20px_rgba(37,211,102,0.6)] flex items-center gap-1.5 text-xs font-bold font-mono group"
-              title={isSi ? "නිල WhatsApp සම්බන්ධතාවය: 076 545 8879" : "Official WhatsApp: 076 545 8879"}
-              aria-label="Direct WhatsApp Hotline"
-            >
-              <span className="text-sm group-hover:scale-110 transition-transform">💬</span>
-              <span className="hidden md:inline font-bold">076 545 8879</span>
-            </a>
-
             {/* Concierge CTA */}
             <div className="hidden sm:block">
               <GoldButton
@@ -155,15 +142,7 @@ export function Navbar({ lang }: NavbarProps) {
               </Link>
             ))}
           </div>
-          <div className="pt-2 flex flex-col gap-2.5">
-            <a
-              href="https://wa.me/94765458879?text=Athugalpura%20Osu%20Inquiry"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-2.5 px-4 rounded-xl bg-[#25D366] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
-            >
-              <span>💬 WhatsApp: 076 545 8879</span>
-            </a>
+          <div className="pt-2 flex justify-center">
             <GoldButton
               href={`/${lang}/contact`}
               variant="primary"
